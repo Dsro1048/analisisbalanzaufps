@@ -182,7 +182,7 @@ if (button.textContent === 'Departamentos') {
 
             const imagenContainer = document.getElementById('imagen-departamento');
             const img = document.createElement('img');
-            img.src = `/images/DEPARTAMENTOS/${tituloEnlace}.png`;
+            img.src = `images/DEPARTAMENTOS/${tituloEnlace}.png`;
 
             // Limpiar el contenedor de imagen antes de agregar la nueva
             imagenContainer.innerHTML = ''; 
