@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
          // Cargar todas las imágenes de conclusión con un ciclo for
     for (let i = 1; i <= 7; i++) {
         const img = document.createElement('img');
-        img.src = `images/CONCLUSION/Conclusion${i}.png`; // Ruta de las imágenes
+        img.src = `images/CONCLUSION/Conclusion${i}.jpg`; // Ruta de las imágenes
         img.alt = `Conclusión ${i}`;
         img.classList.add('imagen') // Guardamos la imagen en el arreglo
         imagenContainer.appendChild(img); // Añadimos la imagen al contenedor
