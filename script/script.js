@@ -53,6 +53,14 @@ const coloresRegion = {
         'Providencias' // Separado de San Andrés
     ];
 
+     const conclusionButton = Array.from(buttons).find(btn => btn.textContent === 'Conclusión');
+     const resetConclusionButton = () => {
+        if (conclusionButton) {
+            conclusionButton.classList.remove('active'); // Quitar clase activa
+            conclusionButton.style.backgroundColor = ''; // Restaurar color original
+        }
+    };
+
     // Añadir un event listener para el clic en cada botón
     buttons.forEach(button => {
         button.addEventListener('click', () => {
@@ -69,7 +77,9 @@ const coloresRegion = {
 const regionesContainer = document.getElementById('regiones-container'); // Contenedor para regiones
 
 if (button.textContent === 'Departamentos') {
+    resetConclusionButton();
     log = 1;
+    resetConclusionButton();
     // Asegurarse de que el botón de "Regiones" vuelva a su color original
                 const regionesButton = Array.from(buttons).find(btn => btn.textContent === 'Regiones');
                 if (regionesButton) {
@@ -90,7 +100,6 @@ if (button.textContent === 'Departamentos') {
         deptButton.style.color = "black";
         deptButton.style.border = `3px solid ${coloresRegion[departamento] || 'black'}`;
         deptButton.style.backgroundColor = coloresRegion[departamento];
-
         // Añadir un event listener para cada botón de departamento
         deptButton.addEventListener('click', () => {
             const imagenContainer = document.getElementById('imagen-departamento');
@@ -124,6 +133,7 @@ if (button.textContent === 'Departamentos') {
 
                 } else if (button.textContent === 'Regiones') {
                     log = 0;
+                    resetConclusionButton();
     // Asegurarse de que el botón de "Departamentos" vuelva a su color original
                 const departamentosButton = Array.from(buttons).find(btn => btn.textContent === 'Departamentos');
                 if (departamentosButton) {
@@ -133,6 +143,16 @@ if (button.textContent === 'Departamentos') {
     regionesContainer.style.display = 'flex';
     departamentosContainer.style.display = 'none';
     button.style.backgroundColor = '#5dc1b9';
+            }
+            else if (button.id === 'conclusion') {
+                // Aquí puedes agregar la lógica para la sección de "Conclusión"
+                const conclusionText = document.createElement('p');
+                conclusionText.textContent = "Esta es la conclusión del proyecto. Aquí iría más texto o contenido relacionado.";
+                conclusionText.style.textAlign = 'center';
+                conclusionText.style.fontSize = '1.5rem';
+                imagenContainer.innerHTML = '';
+                imagenContainer.appendChild(conclusionText);
+                imagenContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         });
     });
