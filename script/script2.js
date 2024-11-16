@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         imagenContainer.innerHTML = '';
         
          // Cargar todas las imágenes de conclusión con un ciclo for
-    for (let i = 1; i <= 1; i++) {
+    for (let i = 1; i <= 13; i++) {
         const img = document.createElement('img');
         img.src = `images/CONCLUSION/Conclusion${i}.png`; // Ruta de las imágenes
         img.alt = `Conclusión ${i}`;
