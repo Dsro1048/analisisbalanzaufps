@@ -180,6 +180,13 @@ svg{
      border: 3px solid #9ce0db;  
 }
 
+#conclusion {
+   color: #005954;
+    font-family: 'Arial';
+    font-size: clamp(1.5rem, 3vw, 3rem);
+     border: 3px solid #9ce0db;  
+}
+
 /* Estilos de los paths del mapa */
 .mapadiv path {
     stroke: black;
